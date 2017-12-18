@@ -47,6 +47,18 @@ Before installing RabbitMQ, you must install a supported version of Erlang/OTP.
 yum install -y --nogpgcheck erlang
 yum install -y --nogpgcheck rabbitmq-server*
 ```
+OR
+Manually by downloading and installing locally by
+```
+yum install erlang-20.1.7-1.el6.x86_64.rpm
+rpm --import /tmp/rabbitmq-release-signing-key.asc
+yum install -y --nogpgcheck rabbitmq-server-3.7.0-1.el6.noarch.rpm
+```
+
+If you are facing dependancy issues while installing run this command to update the proxy settings in epel or redhat repos.
+```
+for x in /etc/yum.repos.d/epel*; do sed -i '/^\[/ a proxy=http://<PROXY_SERVER_IP>:<PORT>' $x; done
+```
 5. The server is not started as a daemon by default when the RabbitMQ server package is installed. To start the daemon by default when the system boots, as an administrator run
 ```
 chkconfig rabbitmq-server on
