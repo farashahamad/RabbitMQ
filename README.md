@@ -96,7 +96,7 @@ rabbitmqctl status
 ``` 
 8. Start the server
 ```
-rabbitmq-server start &
+service rabbitmq-server start &
 ``` 
  9. Check the status
 ```
@@ -108,7 +108,7 @@ ps -ef | grep rabbit
 ```
 11. Stop the server
 ```
-rabbitmq-server stop
+service rabbitmq-server stop
 ``` 
 12. Start the rabbitmq_management plugin
 ```
@@ -136,7 +136,7 @@ rabbitmqctl set_permissions -p / test_user ".*" ".*" ".*"
 15. Stop the server
 ```
 rabbitmqctl stop
-rabbitmq-server stop &
+service rabbitmq-server stop &
 ps aux | grep rabbit
 netstat -tunap | grep 5672
 ```
@@ -169,7 +169,7 @@ We first join rabbit@node02 in a cluster with rabbit@node01. To do that, on rabb
 19. Join the clusters
 ```
 rabbitmqctl stop_app
-rabbitmqctl join_cluster rabbit@sn3-haj-rv-rq02
+rabbitmqctl join_cluster rabbit@node01
 rabbitmqctl start_app
 ``` 
 We can see that the two nodes are joined in a cluster by running the cluster_status command on either of the nodes:
