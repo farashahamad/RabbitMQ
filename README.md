@@ -48,7 +48,7 @@ yum install -y --nogpgcheck erlang
 yum install -y --nogpgcheck rabbitmq-server*
 ```
 OR
-Manually by downloading and installing locally by
+Manually by downloading and installing locally
 ```
 yum install erlang-20.1.7-1.el6.x86_64.rpm
 rpm --import /tmp/rabbitmq-release-signing-key.asc
