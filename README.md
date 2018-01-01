@@ -96,7 +96,7 @@ rabbitmqctl status
 ``` 
 8. Start the server
 ```
-service rabbitmq-server start &
+service rabbitmq-server start
 ``` 
  9. Check the status
 ```
@@ -110,7 +110,7 @@ ps -ef | grep rabbit
 ```
 service rabbitmq-server stop
 ``` 
-12. Start the rabbitmq_management plugin
+12. Enable the rabbitmq_management plugin
 ```
 cd /usr/lib/rabbitmq/bin/
 umask 0022
@@ -136,7 +136,7 @@ rabbitmqctl set_permissions -p / test_user ".*" ".*" ".*"
 15. Stop the server
 ```
 rabbitmqctl stop
-service rabbitmq-server stop &
+service rabbitmq-server stop
 ps aux | grep rabbit
 netstat -tunap | grep 5672
 ```
