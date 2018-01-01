@@ -55,7 +55,7 @@ rpm --import /tmp/rabbitmq-release-signing-key.asc
 yum install -y --nogpgcheck rabbitmq-server-3.7.0-1.el6.noarch.rpm
 ```
 
-If you are facing dependancy issues while installing run this command to update the proxy settings in epel or redhat repos.
+If you are facing dependancy issues while installing run this command with proxy IP and PORT to update the proxy settings in epel or redhat repos.
 ```
 for x in /etc/yum.repos.d/epel*; do sed -i '/^\[/ a proxy=http://<PROXY_SERVER_IP>:<PORT>' $x; done
 ```
