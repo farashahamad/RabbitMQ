@@ -78,6 +78,7 @@ Port Access, SELinux, and similar mechanisms may prevent RabbitMQ from binding t
 •	1883, 8883: (MQTT clients without and with TLS, if the MQTT plugin is enabled
 •	15674: STOMP-over-WebSockets clients (only if the Web STOMP plugin is enabled)
 •	15675: MQTT-over-WebSockets clients (only if the Web MQTT plugin is enabled)
+
 It is possible to configure RabbitMQ to use different ports and specific network interfaces.
 
 #### Managing the Broker
