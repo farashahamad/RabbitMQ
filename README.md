@@ -8,14 +8,14 @@ Message Brokers are usually application stacks with dedicated pieces covering ea
 These message broking solutions act like a middleman for various services (e.g. your web application). They can be used to greatly reduce loads and delivery times by web application servers since tasks, which would normally take quite bit of time to process, can be delegated for a third party whose sole job is to perform them (e.g. workers). They also come in handy when a more "guaranteed" persistence is needed to pass information along from one place to another.
 #### When to use them?
 All put together, the core functionality explained expands to cover a multitude of areas, including-but-not-limited-to:
-•	Allowing web servers to respond to requests quickly instead of being forced to perform resource-heavy procedures on the spot
-•	Distributing a message to multiple recipients for consumption (e.g. processing)
-•	Letting offline parties (i.e. a disconnected user) fetch data at a later time instead of having it lost permanently
-•	Introducing fully asynchronous functionality to the backend systems
-•	Ordering and prioritizing tasks
-•	Balancing loads between workers
-•	Greatly increase reliability and uptime of your application
-•	and much more
+*	Allowing web servers to respond to requests quickly instead of being forced to perform resource-heavy procedures on the spot
+*	Distributing a message to multiple recipients for consumption (e.g. processing)
+*	Letting offline parties (i.e. a disconnected user) fetch data at a later time instead of having it lost permanently
+*	Introducing fully asynchronous functionality to the backend systems
+*	Ordering and prioritizing tasks
+*	Balancing loads between workers
+*	Greatly increase reliability and uptime of your application
+*	and much more
 
 ### RabbitMQ
 RabbitMQ is one of the more popular message broker solutions in the market, offered with an open-source license (Mozilla Public License v1.1) as an implementation of Advanced Message Queuing Protocol. Developed using the Erlang language, it is actually relatively easy to use and get started. It was first published in early 2007 and has since seen an active development with its latest release being version 3.7.0 (November 2017).
@@ -70,21 +70,21 @@ chkconfig rabbitmq-server on
 ```
 The server is set up to run as system user rabbitmq. If you change the location of the node database or the logs, you must ensure the files are owned by this user (and also update the environment variables).
 Port Access, SELinux, and similar mechanisms may prevent RabbitMQ from binding to a port. When that happens, RabbitMQ will fail to start. Firewalls can prevent nodes and CLI tools from communicating with each other. Make sure the following ports can be opened:
-•	4369: epmd, a peer discovery service used by RabbitMQ nodes and CLI tools
-•	5672, 5671: used by AMQP 0-9-1 and 1.0 clients without and with TLS
-•	25672: used by Erlang distribution for inter-node and CLI tools communication and is allocated from a dynamic range (limited to a single port by default, computed as AMQP port + 20000). See networking guide for details.
-•	15672: HTTP API clients and rabbitmqadmin (only if the management plugin is enabled)
-•	61613, 61614: STOMP clients without and with TLS (only if the STOMP plugin is enabled)
-•	1883, 8883: (MQTT clients without and with TLS, if the MQTT plugin is enabled
-•	15674: STOMP-over-WebSockets clients (only if the Web STOMP plugin is enabled)
-•	15675: MQTT-over-WebSockets clients (only if the Web MQTT plugin is enabled)
+*	4369: epmd, a peer discovery service used by RabbitMQ nodes and CLI tools
+*	5672, 5671: used by AMQP 0-9-1 and 1.0 clients without and with TLS
+*	25672: used by Erlang distribution for inter-node and CLI tools communication and is allocated from a dynamic range (limited to a single port by default, computed as AMQP port + 20000). See networking guide for details.
+*	15672: HTTP API clients and rabbitmqadmin (only if the management plugin is enabled)
+*	61613, 61614: STOMP clients without and with TLS (only if the STOMP plugin is enabled)
+*	1883, 8883: (MQTT clients without and with TLS, if the MQTT plugin is enabled
+*	15674: STOMP-over-WebSockets clients (only if the Web STOMP plugin is enabled)
+*	15675: MQTT-over-WebSockets clients (only if the Web MQTT plugin is enabled)
 
 It is possible to configure RabbitMQ to use different ports and specific network interfaces.
 
 #### Managing the Broker
 To stop the server or check its status, etc., you can use package-specific scripts (e.g. the service tool) or invoke rabbitmqctl (as an administrator). It should be available on the path. All rabbitmqctl commands will report the node absence if no broker is running.
-•	Invoke rabbitmqctl stop to stop the server.
-•	Invoke rabbitmqctl status to check whether it is running.
+*	Invoke rabbitmqctl stop to stop the server.
+*	Invoke rabbitmqctl status to check whether it is running.
 
 #### Logging
 Output from the server is sent to a RABBITMQ_NODENAME.log file in the RABBITMQ_LOG_BASE directory. Additional log data is written to RABBITMQ_NODENAME-sasl.log.
